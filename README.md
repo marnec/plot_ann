@@ -48,12 +48,8 @@ for ax in axes:
     ax.set_aspect('equal')
 ```
 
-    /home/marnec/Projects/plot_ann/plot_ann.py:107: RuntimeWarning: invalid value encountered in arcsin
-      rotation = np.degrees(np.arcsin(np.diff(y).squeeze()))
 
-
-
-![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_7_1.png)
+![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_7_0.png)
 
 
 If you desire to preserve the aspect of the axis, remember to either set `ax.set_aspect('equal')` or manually set the right `figsize`. For example, default `plt` paramters will produce a non-square plot and affect the aspect of the network.
@@ -176,7 +172,23 @@ for ax in axes:
 
 ## Edges
 
-1. Change the `edge_lw` (linewidth)
+1. Draw edges from the center of the node with `edge_from_center=True` or from the edge of the node with `edge_from_center=False`
+
+
+```python
+fig, axes = plt.subplots(1, 2, figsize=(8, 4))
+ax1, ax2 = axes
+ann([3, 5, 2], ax=ax1, radius=3)
+ann([3, 5, 2], ax=ax2, edge_from_center=False, radius=3);
+for ax in axes:
+    ax.set_aspect('equal')
+```
+
+
+![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_23_0.png)
+
+
+2. Change the `edge_lw` (linewidth)
 
 
 ```python
@@ -189,10 +201,10 @@ for ax in axes:
 ```
 
 
-![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_23_0.png)
+![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_25_0.png)
 
 
-2. Change the `edge_colors`:
+3. Change the `edge_colors`:
     * `edge_colors=True` will set colors automatically (C0 for input layer and C1 for everything else)
     * `edge_colors=List` will set colors specified in the list starting from top-most input the first layer and prociding towards the bottom and then towards the right (if the list is shorter than the number of edges default color is applied) 
 
@@ -208,10 +220,10 @@ for ax in axes:
 ```
 
 
-![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_25_0.png)
+![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_27_0.png)
 
 
-3. Set `edge_labels`:
+4. Set `edge_labels`:
     * `edge_labels=True` will set labels automatically 
     * `edge_labels=List` will set labels specified in the list starting from top-most input the first layer and prociding towards the bottom and then towards the right (if the list is shorter than the number of edges no label is applied) 
 
@@ -228,10 +240,10 @@ for ax in axes:
 ```
 
 
-![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_27_0.png)
+![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_29_0.png)
 
 
-4. Change `edge_label_spacing`:
+5. Change `edge_label_spacing`:
     * `edge_label_spacing=0` will have all edge labels of a layer in the center of the edge (if all labels are drawn some of them will overlap)
     * `edge_label_spacing>0` will displace a label left if its rotation angle is > 0 else right 
 
@@ -248,10 +260,10 @@ for ax in axes:
 ```
 
 
-![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_29_0.png)
+![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_31_0.png)
 
 
-5. `bias=True` will assume that the topmost input in `architecture` is the bias for each layer (no edges reaching them from the previous layer) and will change the indexing for `node_labels=True` and `edge_labels=True`
+6. `bias=True` will assume that the topmost input in `architecture` is the bias for each layer (no edges reaching them from the previous layer) and will change the indexing for `node_labels=True` and `edge_labels=True`
 
 
 ```python
@@ -264,4 +276,5 @@ for ax in axes:
 ```
 
 
-![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_31_0.png)
+![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_33_0.png)
+

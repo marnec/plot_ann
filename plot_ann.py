@@ -71,7 +71,7 @@ def ann(architecture, radius=1, width=1, height=1, ax=None,
             label = ''
             if node_labels is True:
                 term = 'x' if l == 1 else 'a'
-                j = j if bias is False else j - 1
+                j = j if (bias is False or l == max_n) else j - 1
                 label = f'${term}_{{{j}}}^{{({l})}}$'
             elif isinstance(node_labels, (list, range)):
                 if tot_nodes <= len(node_labels) - 1:
@@ -103,8 +103,8 @@ def ann(architecture, radius=1, width=1, height=1, ax=None,
                     if tot_edges <= len(edge_labels) - 1:
                         label = edge_labels[tot_edges]
                 x, y = edge.get_xdata(), edge.get_ydata()
-                xdist, ydist = np.diff(x).squeeze(), np.diff(y).squeeze()
-                rotation = np.degrees(np.arcsin(np.diff(y).squeeze()))
+                xdist, ydist = np.diff(x).squeeze(), np.diff(y).squeeze() 
+                rotation = np.degrees(np.arcsin(np.diff(y).squeeze()/height)) * 2
                 x += (xdist if rotation < 0 else -xdist)*.1 * edge_label_spacing
                 y += (ydist if rotation < 0 else -ydist)*.1 * edge_label_spacing
                 ax.text(np.mean(x), np.mean(y), label, va='bottom', ha='center',
