@@ -14,7 +14,7 @@ ax.set_aspect('equal')
 ```
 
 
-![png](README_files/README_3_0.png)
+![png](https://raw.githubusercontent.com/marnec/plot_ann/blob/master/README_files/README_3_0.png)
 
 
 ## Figure customization
@@ -32,7 +32,7 @@ ann([3, 5, 2], ax=ax);
 ```
 
 
-![png](README_files/README_5_0.png)
+![png](https://raw.githubusercontent.com/marnec/plot_ann/blob/master/README_files/README_5_0.png)
 
 
 ### Plot size
@@ -53,7 +53,7 @@ for ax in axes:
 
 
 
-![png](README_files/README_7_1.png)
+![png](https://raw.githubusercontent.com/marnec/plot_ann/blob/master/README_files/README_7_1.png)
 
 
 If you desire to preserve the aspect of the axis, remember to either set `ax.set_aspect('equal')` or manually set the right `figsize`. For example, default `plt` paramters will produce a non-square plot and affect the aspect of the network.
@@ -64,7 +64,7 @@ ann([3, 5, 2]);
 ```
 
 
-![png](README_files/README_9_0.png)
+![png](https://raw.githubusercontent.com/marnec/plot_ann/blob/master/README_files/README_9_0.png)
 
 
 Since in `plt` text is not affected by this distorsion, you can play with this to produce elliptical nodes with enough space to write long text inside of them
@@ -77,7 +77,7 @@ ax.text(*nodes[0][0].center, 'I\'m long text', zorder=10, va='center', ha='cente
 ```
 
 
-![png](README_files/README_11_0.png)
+![png](https://raw.githubusercontent.com/marnec/plot_ann/blob/master/README_files/README_11_0.png)
 
 
 ## Network Customization
@@ -99,7 +99,7 @@ for ax in axes:
 ```
 
 
-![png](README_files/README_13_0.png)
+![png](https://raw.githubusercontent.com/marnec/plot_ann/blob/master/README_files/README_13_0.png)
 
 
 ### Nodes
@@ -117,7 +117,7 @@ for ax in axes:
 ```
 
 
-![png](README_files/README_15_0.png)
+![png](https://raw.githubusercontent.com/marnec/plot_ann/blob/master/README_files/README_15_0.png)
 
 
 2. Change the `node_lw` (linewidth) of nodes:
@@ -133,7 +133,7 @@ for ax in axes:
 ```
 
 
-![png](README_files/README_17_0.png)
+![png](https://raw.githubusercontent.com/marnec/plot_ann/blob/master/README_files/README_17_0.png)
 
 
 3. Change the `node_color`:
@@ -152,7 +152,7 @@ for ax in axes:
 ```
 
 
-![png](README_files/README_19_0.png)
+![png](https://raw.githubusercontent.com/marnec/plot_ann/blob/master/README_files/README_19_0.png)
 
 
 4. Set `node_labels`:
@@ -171,7 +171,7 @@ for ax in axes:
 ```
 
 
-![png](README_files/README_21_0.png)
+![png](https://raw.githubusercontent.com/marnec/plot_ann/blob/master/README_files/README_21_0.png)
 
 
 ## Edges
@@ -189,7 +189,7 @@ for ax in axes:
 ```
 
 
-![png](README_files/README_23_0.png)
+![png](https://raw.githubusercontent.com/marnec/plot_ann/blob/master/README_files/README_23_0.png)
 
 
 2. Change the `edge_colors`:
@@ -208,7 +208,7 @@ for ax in axes:
 ```
 
 
-![png](README_files/README_25_0.png)
+![png](https://raw.githubusercontent.com/marnec/plot_ann/blob/master/README_files/README_25_0.png)
 
 
 3. Set `edge_labels`:
@@ -228,7 +228,7 @@ for ax in axes:
 ```
 
 
-![png](README_files/README_27_0.png)
+![png](https://raw.githubusercontent.com/marnec/plot_ann/blob/master/README_files/README_27_0.png)
 
 
 4. Change `edge_label_spacing`:
@@ -248,7 +248,7 @@ for ax in axes:
 ```
 
 
-![png](README_files/README_29_0.png)
+![png](https://raw.githubusercontent.com/marnec/plot_ann/blob/master/README_files/README_29_0.png)
 
 
 5. `bias=True` will assume that the topmost input in `architecture` is the bias for each layer (no edges reaching them from the previous layer) and will change the indexing for `node_labels=True` and `edge_labels=True`
@@ -264,4 +264,4 @@ for ax in axes:
 ```
 
 
-![png](README_files/README_31_0.png)
+![png](https://raw.githubusercontent.com/marnec/plot_ann/blob/master/README_files/README_31_0.png)
