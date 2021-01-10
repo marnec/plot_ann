@@ -41,6 +41,7 @@ anim = animation.FuncAnimation(fig, animate, fargs=(lw,),
 # HTML(anim.to_jshtml())
 ```
 
+# Usage
 The only import you need is the `ann()` function from the `plot_ann` module (which is the only module) 
 
 
@@ -116,7 +117,7 @@ for ax in axes:
 ![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_12_0.png)
 
 
-If you desire to preserve the aspect of the axis, remember to either set `ax.set_aspect('equal')` or manually set the right `figsize`. For example, default `plt` paramters will produce a non-square plot and affect the aspect of the network.
+If you want to preserve the aspect of the axis, remember to either set `ax.set_aspect('equal')` or manually set the right `figsize`. For example, default `plt` paramters will produce a non-square plot and affect the aspect of the network.
 
 
 ```python
@@ -198,7 +199,7 @@ for ax in axes:
 
 3. Change the `node_color`:
     * `node_colors=True` will set colors automatically (C0 for input layer and C1 for everything else)
-    * `node_colors=List` will set colors specified in the list starting from top-most input the first layer and prociding towards the bottom and then towards the right (if the list is shorter than the number of nodes default color is applied) 
+    * `node_colors=List` will set colors specified in the list starting from top-most input the first layer and proceeding towards the bottom and then towards the right (if the list is shorter than the number of nodes default color is applied) 
 
 
 ```python
@@ -234,7 +235,7 @@ for ax in axes:
 ![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_26_0.png)
 
 
-## Edges
+### Edges
 
 1. Draw edges from the center of the node with `edge_from_center=True` or from the edge of the node with `edge_from_center=False`
 
@@ -270,7 +271,7 @@ for ax in axes:
 
 3. Change the `edge_colors`:
     * `edge_colors=True` will set colors automatically (C0 for input layer and C1 for everything else)
-    * `edge_colors=List` will set colors specified in the list starting from top-most input the first layer and prociding towards the bottom and then towards the right (if the list is shorter than the number of edges default color is applied) 
+    * `edge_colors=List` will set colors specified in the list starting from top-most input the first layer and proceeding towards the bottom and then towards the right (if the list is shorter than the number of edges default color is applied) 
 
 
 ```python
@@ -289,7 +290,7 @@ for ax in axes:
 
 4. Set `edge_labels`:
     * `edge_labels=True` will set labels automatically 
-    * `edge_labels=List` will set labels specified in the list starting from top-most input the first layer and prociding towards the bottom and then towards the right (if the list is shorter than the number of edges no label is applied) 
+    * `edge_labels=List` will set labels specified in the list starting from top-most input the first layer and proceeding towards the bottom and then towards the right (if the list is shorter than the number of edges no label is applied) 
 
 
 ```python
