@@ -1,10 +1,17 @@
-```python
-%pylab --no-import-all inline
-from plot_ann import ann
-```
+# Requirements
 
-    Populating the interactive namespace from numpy and matplotlib
+* Python >= 3.6 (There are f strings)
+* matpltolib 
+* numpy
 
+# Motivation
+> There are other libs that can plot ANNs, why writing your own?
+
+This implementation is completely based on matplotlib, and doesn't require any additional library like Viz or PyGraph.
+
+This also means that is natively compatible with jupyter noteboks
+
+Furthermore you can also create animations that work natively in HTML pages (can't be demonstrated here since github doesn't allow script tags execution)
 
 
 ```python
