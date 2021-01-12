@@ -104,7 +104,7 @@ def ann(architecture, radius=1, width=1, height=1, ax=None,
                         label = edge_labels[tot_edges]
                 x, y = edge.get_xdata(), edge.get_ydata()
                 xdist, ydist = np.diff(x).squeeze(), np.diff(y).squeeze() 
-                rotation = np.degrees(np.arcsin(np.diff(y).squeeze()/height)) * 2
+                rotation = np.degrees(np.arctan(ydist/xdist))
                 x += (xdist if rotation < 0 else -xdist)*.1 * edge_label_spacing
                 y += (ydist if rotation < 0 else -ydist)*.1 * edge_label_spacing
                 ax.text(np.mean(x), np.mean(y), label, va='bottom', ha='center',
