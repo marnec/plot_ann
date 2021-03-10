@@ -64,15 +64,14 @@ def ann(architecture, radius=1, width=1, height=1, ax=None,
     
     # Node labels and colors
     tot_nodes = -1
-    for l, layer in enumerate(nodes, 1):
+    for l, layer in enumerate(nodes):
         for j, node in enumerate(layer, 1):
             tot_nodes += 1
             # labels
             label = ''
             if node_labels is True:
-                term = 'x' if l == 1 else 'a'
                 j = j if (bias is False or l == max_n) else j - 1
-                label = f'${term}_{{{j}}}^{{({l})}}$'
+                label = f'$a_{{{j}}}^{{[{l}]}}$'
             elif isinstance(node_labels, (list, range)):
                 if tot_nodes <= len(node_labels) - 1:
                     label = node_labels[tot_nodes]
@@ -81,7 +80,7 @@ def ann(architecture, radius=1, width=1, height=1, ax=None,
             if not node_colors is False:
                 c = 'k'
                 if node_colors is True:
-                    c = 'C0' if l == 1 else 'C1'
+                    c = 'C0' if l == 0 else 'C1'
                 elif isinstance(node_colors, list):
                     if tot_nodes <= len(node_colors) - 1:
                         c = node_colors[tot_nodes]
@@ -89,7 +88,7 @@ def ann(architecture, radius=1, width=1, height=1, ax=None,
 
     # Edge labels and colors
     tot_edges = -1
-    for l, layer in enumerate(edges, 1):
+    for l, layer in enumerate(edges):
         for j, from_node in enumerate(layer, 1):
             for i, edge in enumerate(from_node, 1):
                 tot_edges += 1
@@ -98,7 +97,7 @@ def ann(architecture, radius=1, width=1, height=1, ax=None,
                 if edge_labels is True:
                     j = j if bias is False else j - 1
                     theta_idx = ''.join(map(str, [j,i]))
-                    label = f'$\\Theta_{{{theta_idx}}}^{{({l})}}$'
+                    label = f'$w_{{{theta_idx}}}^{{[{l}]}}$'
                 elif isinstance(edge_labels, (list, range)):
                     if tot_edges <= len(edge_labels) - 1:
                         label = edge_labels[tot_edges]
@@ -113,7 +112,7 @@ def ann(architecture, radius=1, width=1, height=1, ax=None,
                 if not edge_colors is False:
                     c = 'k'
                     if edge_colors is True:
-                        c = 'C0' if l == 1 else 'C1'
+                        c = 'C0' if l == 0 else 'C1'
                     elif isinstance(edge_colors, list):
                         if tot_edges <= len(edge_colors) - 1:
                             c = edge_colors[tot_edges]

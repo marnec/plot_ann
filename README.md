@@ -58,7 +58,9 @@ ax.set_aspect('equal')
 ```
 
 
+    
 ![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_6_0.png)
+    
 
 
 The `ann()` function returns `ax, nodes, edges`. Where `ax` is an instance of [matplotlib.axes](https://matplotlib.org/3.3.3/api/axes_api.html); `nodes` is a structured List of [matplotlib.patches.Circle](https://matplotlib.org/3.3.3/api/_as_gen/matplotlib.patches.Circle.html) and `edges` is a structured list of [matplotlib.lines.Line2D](https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.lines.Line2D.html).
@@ -72,14 +74,16 @@ ann([1, 1])
 
 
     (<AxesSubplot:>,
-     [[<matplotlib.patches.Circle at 0x7fb1254b9c50>],
-      [<matplotlib.patches.Circle at 0x7fb1254b9f28>]],
-     [[[<matplotlib.lines.Line2D at 0x7fb1254c9208>]]])
+     [[<matplotlib.patches.Circle at 0x7f1f261929a0>],
+      [<matplotlib.patches.Circle at 0x7f1f261929d0>]],
+     [[[<matplotlib.lines.Line2D at 0x7f1f26147130>]]])
 
 
 
 
+    
 ![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_8_1.png)
+    
 
 
 ## Figure customization
@@ -97,7 +101,9 @@ ann([3, 5, 2], ax=ax);
 ```
 
 
+    
 ![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_10_0.png)
+    
 
 
 ### Plot size
@@ -114,7 +120,9 @@ for ax in axes:
 ```
 
 
+    
 ![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_12_0.png)
+    
 
 
 If you want to preserve the aspect of the axis, remember to either set `ax.set_aspect('equal')` or manually set the right `figsize`. For example, default `plt` paramters will produce a non-square plot and affect the aspect of the network.
@@ -125,7 +133,9 @@ ann([3, 5, 2]);
 ```
 
 
+    
 ![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_14_0.png)
+    
 
 
 Since in `plt` text is not affected by this distorsion, you can play with this to produce elliptical nodes with enough space to write long text inside of them
@@ -138,7 +148,9 @@ ax.text(*nodes[0][0].center, 'I\'m long text', zorder=10, va='center', ha='cente
 ```
 
 
+    
 ![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_16_0.png)
+    
 
 
 ## Network Customization
@@ -160,7 +172,9 @@ for ax in axes:
 ```
 
 
+    
 ![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_18_0.png)
+    
 
 
 ### Nodes
@@ -178,7 +192,9 @@ for ax in axes:
 ```
 
 
+    
 ![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_20_0.png)
+    
 
 
 2. Change the `node_lw` (linewidth) of nodes:
@@ -194,7 +210,9 @@ for ax in axes:
 ```
 
 
+    
 ![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_22_0.png)
+    
 
 
 3. Change the `node_color`:
@@ -213,7 +231,9 @@ for ax in axes:
 ```
 
 
+    
 ![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_24_0.png)
+    
 
 
 4. Set `node_labels`:
@@ -232,7 +252,9 @@ for ax in axes:
 ```
 
 
+    
 ![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_26_0.png)
+    
 
 
 ### Edges
@@ -250,7 +272,9 @@ for ax in axes:
 ```
 
 
+    
 ![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_28_0.png)
+    
 
 
 2. Change the `edge_lw` (linewidth)
@@ -266,7 +290,9 @@ for ax in axes:
 ```
 
 
+    
 ![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_30_0.png)
+    
 
 
 3. Change the `edge_colors`:
@@ -285,7 +311,9 @@ for ax in axes:
 ```
 
 
+    
 ![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_32_0.png)
+    
 
 
 4. Set `edge_labels`:
@@ -305,7 +333,9 @@ for ax in axes:
 ```
 
 
+    
 ![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_34_0.png)
+    
 
 
 5. Change `edge_label_spacing`:
@@ -325,7 +355,9 @@ for ax in axes:
 ```
 
 
+    
 ![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_36_0.png)
+    
 
 
 6. `bias=True` will assume that the topmost input in `architecture` is the bias for each layer (no edges reaching them from the previous layer) and will change the indexing for `node_labels=True` and `edge_labels=True`
@@ -341,5 +373,7 @@ for ax in axes:
 ```
 
 
+    
 ![png](https://raw.githubusercontent.com/marnec/plot_ann/master/README_files/README_38_0.png)
+    
 
