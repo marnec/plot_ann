@@ -39,11 +39,11 @@ def ann(architecture, radius=1, width=1, height=1, ax=None,
         # Layer labels
         layer_label_y = 0.0  
         if layer_labels is True:
-            ax.text(x, layer_label_y, f"Layer {n+1}", fontsize=10, va='center', ha='center', zorder=10)
+            label = f'Layer {n}' if n > 0 else 'Input Layer' 
+            ax.text(x, layer_label_y, label, fontsize=10, va='center', ha='center', zorder=10)
         elif isinstance(layer_labels, list):
             if n <= len(layer_labels) - 1:
                 ax.text(x, layer_label_y, layer_labels[n], fontsize=10, va='center', ha='center', zorder=10)
-
 
     # Edges
     edges = []
