@@ -5,7 +5,7 @@ import numpy as np
 def ann(architecture, radius=1, width=1, height=1, ax=None, 
     node_lw=1, edge_lw=.25, bias=False, edge_from_center=True, 
     layer_labels=False, node_labels=False, edge_labels=False, edge_label_spacing=1,
-    node_colors=False, edge_colors=False):
+    node_colors=False, edge_colors=False, node_fontsize=10, layer_fontsize=10, edge_fontsize=10):
 
     if ax is None:
         fig, ax = plt.subplots()
@@ -40,10 +40,10 @@ def ann(architecture, radius=1, width=1, height=1, ax=None,
         layer_label_y = 0.0  
         if layer_labels is True:
             label = f'Layer {n}' if n > 0 else 'Input Layer' 
-            ax.text(x, layer_label_y, label, fontsize=10, va='center', ha='center', zorder=10)
+            ax.text(x, layer_label_y, label, fontsize=layer_fontsize, va='center', ha='center', zorder=10)
         elif isinstance(layer_labels, list):
             if n <= len(layer_labels) - 1:
-                ax.text(x, layer_label_y, layer_labels[n], fontsize=10, va='center', ha='center', zorder=10)
+                ax.text(x, layer_label_y, layer_labels[n], fontsize=layer_fontsize, va='center', ha='center', zorder=10)
 
     # Edges
     edges = []
@@ -75,7 +75,7 @@ def ann(architecture, radius=1, width=1, height=1, ax=None,
             elif isinstance(node_labels, (list, range)):
                 if tot_nodes <= len(node_labels) - 1:
                     label = node_labels[tot_nodes]
-            ax.text(*node.center, label, zorder=10, ha='center', va='center')
+            ax.text(*node.center, label, fontsize=node_fontsize, zorder=10, ha='center', va='center')
             # colors
             if not node_colors is False:
                 c = 'k'
@@ -107,7 +107,7 @@ def ann(architecture, radius=1, width=1, height=1, ax=None,
                 x += (xdist if rotation < 0 else -xdist)*.1 * edge_label_spacing
                 y += (ydist if rotation < 0 else -ydist)*.1 * edge_label_spacing
                 ax.text(np.mean(x), np.mean(y), label, va='bottom', ha='center',
-                rotation=rotation)
+                rotation=rotation, fontsize=edge_fontsize)
                 # colors
                 if not edge_colors is False:
                     c = 'k'

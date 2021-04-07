@@ -9,7 +9,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="plot_ann",
-    version="1.1.2",
+    version="1.1.3",
     description="Plot an Artificial Neural Network (ANN) model",
     long_description=README,
     long_description_content_type="text/markdown",
